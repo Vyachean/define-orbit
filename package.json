@@ -1,0 +1,123 @@
+{
+  "name": "define-orbit",
+  "version": "0.0.0-development",
+  "description": "OrbitDB for vue 3",
+  "main": "./lib/index.js",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rm -rf ./lib/",
+    "cm": "cz",
+    "lint": "eslint ./src/ --fix",
+    "prepare": "husky install",
+    "semantic-release": "semantic-release",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vyachean/define-orbit.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Vyacheslav Baranov",
+    "email": "vyachean@gmail.com",
+    "url": "https://github.com/vyachean"
+  },
+  "engines": {
+    "node": ">=16.0"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/vyachean/define-orbit/issues"
+  },
+  "homepage": "https://github.com/vyachean/define-orbit#readme",
+  "devDependencies": {
+    "@ryansonshine/commitizen": "^4.2.8",
+    "@ryansonshine/cz-conventional-changelog": "^3.3.4",
+    "@semantic-release/git": "^10.0.1",
+    "@types/orbit-db": "https://github.com/orbitdb/orbit-db-types.git",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "conventional-changelog-conventionalcommits": "^5.0.0",
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "semantic-release": "^19.0.2",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.8.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/@vyachean/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --cache-location .eslintcache --fix"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/commit-analyzer",
+        {
+          "preset": "conventionalcommits",
+          "releaseRules": [
+            {
+              "type": "build",
+              "scope": "deps",
+              "release": "patch"
+            }
+          ]
+        }
+      ],
+      [
+        "@semantic-release/release-notes-generator",
+        {
+          "preset": "conventionalcommits",
+          "presetConfig": {
+            "types": [
+              {
+                "type": "feat",
+                "section": "Features"
+              },
+              {
+                "type": "fix",
+                "section": "Bug Fixes"
+              },
+              {
+                "type": "build",
+                "section": "Dependencies and Other Build Updates",
+                "hidden": false
+              }
+            ]
+          }
+        }
+      ],
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "package.json"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ],
+      "@semantic-release/github"
+    ]
+  },
+  "dependencies": {
+    "ipfs-core": "^0.16.1",
+    "ipfs-message-port-client": "^0.13.1",
+    "orbit-db": "^0.28.7",
+    "pinia": "^2.0.23",
+    "vue": "^3.2.41"
+  }
+}
