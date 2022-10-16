@@ -28,7 +28,15 @@
   "engines": {
     "node": ">=16.0"
   },
-  "keywords": [],
+  "keywords": [
+    "vue",
+    "pinia",
+    "database",
+    "ipfs",
+    "p2p",
+    "peer-to-peer",
+    "orbit-db"
+  ],
   "bugs": {
     "url": "https://github.com/vyachean/define-orbit/issues"
   },

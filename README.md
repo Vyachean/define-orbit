@@ -15,7 +15,7 @@ This introduces factory functions to easily use the **[OrbitDB](https://github.c
 ## Install
 
 ```bash
-npm install define-orbit
+npm i define-orbit
 ```
 
 ## Usage
