@@ -1,6 +1,6 @@
 {
   "name": "define-orbit",
-  "version": "0.0.0-development",
+  "version": "0.0.0-alpha",
   "description": "OrbitDB for vue 3",
   "main": "./lib/index.js",
   "files": [
