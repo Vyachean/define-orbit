@@ -1,6 +1,6 @@
 {
   "name": "define-orbit",
-  "version": "0.0.0-alpha",
+  "version": "0.0.1-alpha",
   "description": "OrbitDB for vue 3",
   "main": "./lib/index.js",
   "files": [
@@ -45,7 +45,6 @@
     "@ryansonshine/commitizen": "^4.2.8",
     "@ryansonshine/cz-conventional-changelog": "^3.3.4",
     "@semantic-release/git": "^10.0.1",
-    "@types/orbit-db": "https://github.com/orbitdb/orbit-db-types.git",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "conventional-changelog-conventionalcommits": "^5.0.0",
@@ -122,6 +121,7 @@
     ]
   },
   "dependencies": {
+    "@types/orbit-db": "https://github.com/orbitdb/orbit-db-types.git",
     "ipfs-core": "^0.16.1",
     "ipfs-message-port-client": "^0.13.1",
     "orbit-db": "^0.28.7",
